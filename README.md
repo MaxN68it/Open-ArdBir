@@ -1,4 +1,4 @@
 Open-ArdBir
 ===========
 
-Single Vessel Brewing System Firmware
+Single Vessel Brewing System Firmware with Arduino UNO
