@@ -26,20 +26,20 @@ brauduino semi automated single vessel RIMS
  - Added Stage Watch in Manual Mode
  
  - Added Second Menu Configuration
- - Set Scale Temp (Â°C-Â°F)
- - Set Temp of Boil
- - Set Set Time Pump Cycle and Time Rest
- - Set Location of Temp Sensor
- - Set Pump ON-OFF at Boil 
- - Set Temp Pump Rest
- - Set Calibration Temp
+  - Set Scale Temp (°C-°F)
+  - Set Temp of Boil
+  - Set Set Time Pump Cycle and Time Rest
+  - Set Location of Temp Sensor
+  - Set Pump ON-OFF at Boil 
+  - Set Temp Pump Rest
+  - Set Calibration Temp
  
  - Reorganized Automation
- - Removed Number of Stages Setting
- - Fixed Name of Stages
- - Correct Mash In Stage
- - Correct Time Reset of Pump
- - Added Iodine Test (Active Rest)
+  - Removed Number of Stages Setting
+  - Fixed Name of Stages
+  - Correct Mash In Stage
+  - Correct Time Reset of Pump
+  - Added Iodine Test (Active Rest)
  
  - LCD 16x2 wiew
  - LCD 20x4 wiew
