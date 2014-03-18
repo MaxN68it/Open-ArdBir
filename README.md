@@ -30,6 +30,7 @@ Copyright (C) 2012  Stephen Mathison
  - Dual Scale Temp (°C-°F)
  - Reorganized EEPROM
  - Reorganized Configuration
+ - Jump Step whit Button Press in Automatic Mode
  
  - Added Second Menu Configuration
    - Set Scale Temp (°C-°F)
@@ -47,6 +48,7 @@ Copyright (C) 2012  Stephen Mathison
    - Auto Mash Design
    - Correct Time Reset of Pump
    - Added Iodine Test (Active Pause)
+   - Save the Setting
  
  - Stage Managing
    - Load Stage Set
