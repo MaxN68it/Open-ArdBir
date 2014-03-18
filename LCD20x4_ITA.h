@@ -149,6 +149,12 @@ void Stage(byte Stage, float Set, float Temp){
   lcd.setCursor(0,3);
   lcd.print(F(" SU**GIU' Pausa --- "));
 }
+
+void SaltoStep(){
+  lcd.setCursor(0,2);
+  lcd.print(F("  Step Successivo?  "));
+}
+
 void RemoveMalt(){
   lcd.setCursor(0,2);
   lcd.print(F("   Rimuovi  Malto   "));
@@ -269,13 +275,13 @@ void Menu_3_3_x(byte Stage){
 
 void Menu_3_3_8(){
   lcd.setCursor(1,2);
-  lcd.print(F("Numero Luppoli   "));
+  lcd.print(F("Numero Luppoli  "));
   LCD_QQxO();
 } 
 
 void Menu_3_3_9(){
   lcd.setCursor(1,2);
-  lcd.print(F("Bollitura    "));
+  lcd.print(F("Bollitura     "));
   LCD_QQxO();
 } 
 
@@ -300,10 +306,10 @@ void Menu_3_4_1(){
   lcd.print(F("   Carica Ricetta   "));
   LCD_xGEO();
 }
-void Menu_3_4_2(){
+void Menu_3_4_2(byte Riga){
   lcd.setCursor(0,2);
   lcd.print(F("   Salva  Ricetta   "));
-  LCD_SGEO();
+  if (Riga==1)LCD_SGEO();
 }
 void Menu_3_4_3(){
   lcd.setCursor(0,2);
@@ -434,7 +440,7 @@ void Menu_3_5(){
   LCD_SxEO();
 }     
 
-
+/*
 void Menu_4(){
   lcd.clear();
   lcd.setCursor(0,0);
@@ -455,7 +461,7 @@ void Menu_4_1(){
   delay(3500);
   lcd.clear();
 }
-
+*/
 
 void Credits(){
   lcd.clear();
@@ -611,13 +617,13 @@ void TimeSet(int Time){
 }
 
 void NumHops(byte SetNumHops){
-  lcd.setCursor(16,2);
+  lcd.setCursor(17,2);
   if(SetNumHops<10)LCDSpace(1);
   lcd.print(SetNumHops);   
 }
 
 void TimeHops(int Time){
-  lcd.setCursor(14,2);
+  lcd.setCursor(15,2);
   if (Time<10)LCDSpace(2);
   if (Time>=10 && Time<100)LCDSpace(1);
   lcd.print(Time);   
