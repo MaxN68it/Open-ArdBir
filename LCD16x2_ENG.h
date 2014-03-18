@@ -126,6 +126,11 @@ void Stage(byte Stage, float Set, float Temp){
 
 }
 
+void SaltoStep(){
+  lcd.setCursor(0,0);
+  lcd.print(F("Go to Next Step?"));
+}
+
 void RemoveMalt(){
   lcd.setCursor(0,0);
   lcd.print(F("  Remove  Malt  "));
@@ -343,8 +348,8 @@ void Menu_3_4_1(){
   lcd.setCursor(0,1);
   lcd.print(F("  Load Setting  "));
 }
-void Menu_3_4_2(){
-  lcd.setCursor(0,1);
+void Menu_3_4_2(byte Riga){
+  lcd.setCursor(0,Riga);
   lcd.print(F("  Save Setting  "));
 }
 void Menu_3_4_3(){
@@ -545,7 +550,7 @@ void Credits(){
   lcd.clear();
 }
 
-
+/*
 void Menu_4(){
   lcd.clear();
   lcd.setCursor(0,0);
@@ -566,7 +571,7 @@ void Menu_4_1(){
   delay(3500);
   lcd.clear();
 }
-
+*/
 void Pause_Stage(float Temp, int Time){
   lcd.setCursor(0,0);
   lcd.print(F("--- In Pause ---" ));
