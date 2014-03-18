@@ -1,4 +1,4 @@
-char* Version = "2.6.53"; 
+char* Version = "2.6.54"; 
 
 /*
 brauduino semi automated single vessel RIMS
@@ -170,13 +170,13 @@ byte RevPumpONOFF[8] = {B11111, B10001, B10101, B10001, B10111, B10111, B10111, 
 
 
 
-
+/*
 int freeRam () {
   extern int __heap_start, *__brkval;
   int v;
   return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
 }
-
+*/
 
 void display_lcd (byte posX, byte posY, const char* lable){
   lcd.setCursor(posX, posY);
@@ -628,6 +628,22 @@ void stage_loop (byte stage){
       if(stageTime<lastminute)hop_add();  //check to add hops
     }
     quit_mode (autoEnter);
+    
+    if (btn_Press(Button_enter,2500)){
+      boolean flag_SaltoStep;
+      Buzzer(3,50);
+      delay(200);
+      Buzzer(3,50);
+      
+      SaltoStep();
+      LCD_Procedo();
+      
+      if (stage != 0)wait_for_confirm(flag_SaltoStep,1);
+      if(flag_SaltoStep){
+        Clear_2_3();
+        return;
+      }
+    }  
   }
 }
 
@@ -729,8 +745,10 @@ void manual_mode (){
   boolean manualLoop = false;
 
   byte Verso=0;
-  unsigned long Timer =0;
-
+  unsigned long Timer = 0;
+  
+  boolean reachedBeep = false;
+  
   load_pid_settings();
   boil_output = EEPROM.read(8); // get boil heat %
   prompt_for_water();
@@ -756,9 +774,18 @@ void manual_mode (){
     }else{
       if ((Input + DeltaSetPoint) < Setpoint && Verso==1){
         tempReached = false;
+        reachedBeep=false;
         TimeSpent = 0;
       }
     }
+    
+    if(tempReached){
+      if (reachedBeep==false){
+        Buzzer(4,125);
+        reachedBeep=true;
+      }
+    } 
+    
 //  manual_timing();
     if ((millis()-start)>1000){  // timing routine
       start = millis();
@@ -1312,15 +1339,29 @@ void set_hops (){
         hopLoop = false;
       }
     }blhpAddr+= 1;
-  }Clear_2_3();
+  }
+  boolean flag_SaveRecipe;
+  //RICHIESTA SALVATAGGIO RICETTA
+  Menu_3_4_2(0);
+  LCD_Procedo();
+  //ATTESA RISPOSTA
+  wait_for_confirm(flag_SaveRecipe,0);
+  if(flag_SaveRecipe){
+    //SALVATAGGIO RICETTA
+    saveRecipe();
+  //}else{
+  //  Clear_2_3();
+  }
+  Menu_3();
+  Clear_2_3();
 }
 
 
-
+/*
 void TestRam(){  
   Menu_4_1();
 }
-
+*/
 
 void setup_mode (){
   boolean setupLoop = true;
@@ -1375,6 +1416,7 @@ void setup(){
   Serial.begin(9600);
 
   // SETTING LCD*****
+  // Select your LCD
   lcd.begin(16,2);
 //  lcd.begin(20,4);
 
@@ -1443,13 +1485,13 @@ void loop(){
     setup_mode();
     mainMenu = 0;    
     break;
-
+/*
     case (4):
     Menu_4();
     TestRam();
     mainMenu = 0;    
     break;
-
+*/
   default: 
     mheat=false;
     mpump=false;  
@@ -1461,7 +1503,7 @@ void loop(){
     if (btn_Press(Button_dn,500))mainMenu = 1;
     if (btn_Press(Button_start,500))mainMenu = 2;
     if (btn_Press(Button_enter,500))mainMenu = 3;
-    if (btn_Press(Button_up,2500))mainMenu = 4;
+    //if (btn_Press(Button_up,2500))mainMenu = 4;
     break;    
   }
 }
