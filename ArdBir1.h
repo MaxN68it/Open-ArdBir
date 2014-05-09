@@ -28,30 +28,16 @@ void ArdBir1 (byte posX, byte posY){
     for (byte x=0; x<2; x++){
       lcd.setCursor(posX+x,posY+y);
       lcd.write(Count);
+      lcd.setCursor(posX+x+4,posY+y);
+      lcd.write(4+Count);
       Count++;
     }
   }
-  delay(850);
+
   lcd.setCursor(posX+2,posY+1);
   lcd.print(F("rd"));
 
-  delay(850);
-
-  for(byte y=0; y<2; y++){
-    for (byte x=5; x<7; x++){
-      lcd.setCursor(posX+x,posY+y);
-      lcd.write(Count);
-      Count++;
-    }
-  }
-  delay(850);
-  lcd.setCursor(posX+7,posY+1);
+  lcd.setCursor(posX+6,posY+1);
   lcd.print(F("ir"));
-
-  delay(1500);
-
-  lcd.setCursor(posX+10,posY+1);
-  lcd.print(F("By Max"));
-  delay(3000);
-  lcd.clear();
+  delay(3500);
 }
