@@ -1,7 +1,7 @@
 Open-ArdBir 2012-2014
 ===========
 
-Version 2.6.54
+Version 2.6.62e
 
 brauduino semi automated single vessel RIMS
 created by s.mathison
@@ -30,6 +30,8 @@ Copyright (C) 2012  Stephen Mathison
  - Dual Scale Temp (°C-°F)
  - Reorganized EEPROM
  - Reorganized Configuration
+ - Added Delayed Start
+ - Added Alert before Mash In
  - Jump Step whit Button Press in Automatic Mode
  
  - Added Second Menu Configuration
@@ -43,13 +45,13 @@ Copyright (C) 2012  Stephen Mathison
  
  - Reorganized Automation
    - Removed Number of Stages Setting
-   - Fixed Name of Stages (7)
+   - Fixed Name of Stages (8)
+   - Dual A-Amylase Stage
    - Correct Mash In Stage
    - Auto Mash Design
    - Correct Time Reset of Pump
    - Added Iodine Test (Active Pause)
-   - Save the Setting
- 
+   
  - Stage Managing
    - Load Stage Set
    - Save Stage Set
