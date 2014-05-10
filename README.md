@@ -3,6 +3,8 @@ Open-ArdBir 2012-2014
 
 Version 2.6.62e
 
+Manual English: http://goo.gl/LB6BEz
+
 brauduino semi automated single vessel RIMS
 created by s.mathison
 Copyright (C) 2012  Stephen Mathison
