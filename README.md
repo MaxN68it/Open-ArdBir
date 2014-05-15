@@ -1,9 +1,13 @@
 Open-ArdBir 2012-2014
 ===========
-
 Version 2.6.62e
 
+PCB & Component List: http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.saviot.com%2FBrassaturaCasalinga%2FPcbBirraDefinitivi%2FOpnArdBirOC.rar&h=GAQHHv-ys 
+
 Manual English: http://goo.gl/LB6BEz
+
+
+
 
 brauduino semi automated single vessel RIMS
 created by s.mathison
