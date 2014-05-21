@@ -1,11 +1,12 @@
 Open-ArdBir 2012-2014
 ===========
-Version 2.6.62e
+Version 2.6.63b2
+- Correction of errors display
+- Fix failure of the pump break during the mash out
+- Change the value of the limit of Delta Temperature on the restoration of pump break
+- fixed error on resume.
 
-PCB & Component List: http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.saviot.com%2FBrassaturaCasalinga%2FPcbBirraDefinitivi%2FOpnArdBirOC.rar&h=GAQHHv-ys 
-
-Manual English: http://goo.gl/LB6BEz
-
+Source, PCB, Manual (English, Italian, Russian): http://goo.gl/SCM4Yo
 
 
 
