@@ -1,4 +1,4 @@
-Open-ArdBir 2012-2014
+Open ArdBir 2012-2014
 ===========
 Version 2.6.63b2
 - Correction of errors display
