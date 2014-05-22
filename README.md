@@ -5,6 +5,9 @@ Version 2.6.63b2
 - Fix failure of the pump break during the mash out
 - Change the value of the limit of Delta Temperature on the restoration of pump break
 - fixed error on resume.
+- Added Spanish Language
+- Added Russian Manual
+
 
 Source, PCB, Manual (English, Italian, Russian): http://goo.gl/SCM4Yo
 
